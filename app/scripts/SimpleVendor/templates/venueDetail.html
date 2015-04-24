@@ -1,0 +1,44 @@
+ <% _.forEach(venues, function(venue) { %>
+<section class="venue overflow hidden">
+    <ul class="venue" style="width:50%;">
+        <li class="name">
+            <h1><%= venue.firstName %> <%= venue.lastName %></h1>
+        </li>
+        <li class="address">
+            <span><%= venue.address %></span>
+        </li>
+        <li class="city">
+            <span><%= venue.city %></span>
+        </li>
+        <li class="state">
+            <span><%= venue.state %></span>
+        </li>
+        <li class="zip">
+            <span><%= venue.zip %></span>
+        </li>
+        <li class="phone-number">
+            <span><%= venue.phoneNumber %></span>
+        </li>
+        <li class="venue">
+            <strong style="font-weight:bold">
+                <%= venue.venue %>
+            </strong>
+        </li>
+        <li class="event-date">
+            <span>
+                <%= venue.eventDate %>
+            </span>
+        </li>
+        <li class="summary">
+            <p><%= venue.summary %></p>
+        </li>
+    </ul>
+
+    <!-- Compile Address -->
+    <% var mapAddress = venue.address + ' ' + venue.city + ' ' + venue.state + ' ' + venue.zip; %>
+
+    <!-- Build Map -->
+    <% venueMapHandler(mapAddress, venue.venue); %>
+    <div id="<%= venue.venue.toLowerCase().replace(/\s+/g, '-') %>" class="map" style="height: 500px; width:50%;" />
+</section><!-- / end vendor -->
+<% }); %>

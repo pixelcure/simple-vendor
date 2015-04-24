@@ -1,0 +1,19 @@
+body {
+    background: #19ffe0;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 0;
+}
+
+header {
+	background: #FFF;
+}
+
+.left { float: left; }
+.right { float: right; }
+.overflow-hidden { overflow: hidden; }
+ul li {
+	list-style: none;
+	padding: 0;
+}
+
